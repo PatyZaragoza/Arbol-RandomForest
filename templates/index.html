@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebooks Combinados</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .notebook {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .notebook h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .notebook .content {
+            overflow-x: auto;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background: #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Notebooks Combinados</h1>
+    </header>
+    <div class="container">
+        {% for notebook in notebooks %}
+            <div class="notebook">
+                <h2>{{ notebook.name }}</h2>
+                <div class="content">{{ notebook.content|safe }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <footer>
+        &copy; 2024 - Paty Zaragoza
+    </footer>
+</body>
+</html>
